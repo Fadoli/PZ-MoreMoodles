@@ -1,0 +1,5 @@
+name=MoreMoodles
+id=MoreMoodles
+description=Describes more of the vanilla player's state with moodles
+poster=poster.png
+require=MoodleFramework
