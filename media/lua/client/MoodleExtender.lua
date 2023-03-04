@@ -57,9 +57,14 @@ local function MoodleUpdatePlayer(player)
     end
 end
 local function MoodleCreatePlayer()
+    -- Nutrition related setThresholds
     MF.getMoodle("Proteins"):setThresholds( -1500, -1000, -300, -200, 50, 300, 9999, 9999)
     MF.getMoodle("Lipids"):setThresholds( -9999, -1500, -1000, -500, 400, 700, 9999, 9999)
     MF.getMoodle("Carbohydrates"):setThresholds( -9999, -9999, -9999, -9999, 400, 700, 9999, 9999)
+
+    -- setThresholds for player who should not gain / loose weight
+    MF.getMoodle("LoosingWeight"):setThresholds( -9999, -9999, -9999, -9999, 9999, 9999, 9999, 9999)
+    MF.getMoodle("GainingWeight"):setThresholds( -9999, -9999, -9999, -9999, 9999, 9999, 9999, 9999)
 end
 
 Events.OnPlayerUpdate.Add(MoodleUpdatePlayer);
